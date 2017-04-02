@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>All Action Betting!</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/all_action_betting.css') }}">
+  </head>
+
+  <body>
+    <form name="goals" action="/set_goal_state" method="post">
+      <table id="goals_table">
+        <tr>
+          <td>
+            <h2> T1: </h2>
+            <select name="T1" id="T1" onchange="this.form.submit()">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+          </td>
+          <td>
+            <h2> T2: </h2>
+            <select name="T2" id="T2" onchange="this.form.submit()">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <form name="input" action="/set_bet_state" method="post">
+      <input type="submit" id="U2" name="button" value="U2">
+      <input type="submit" id="U1" name="button" value="U1">
+      <input type="submit" id="O1" name="button" value="O1">
+      <input type="submit" id="O2" name="button" value="O2">
+      <input type="submit" id="P"  name="button" value="P">
+      <input type="submit" id="Z"  name="button" value="Z">
+     </form>
+  </body>
+
+  <script type="text/javascript" src="{{ url_for('static', filename='js/all_action_betting.js')}}"></script>
+  <script type="text/javascript">
+    setState({{data|tojson}})
+    setInterval('heartbeat()', 180000);
+    heartbeat();
+  </script>
+
+</html>

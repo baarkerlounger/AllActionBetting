@@ -1,0 +1,56 @@
+input {
+    -webkit-appearance: none;
+}
+
+#goals_table{
+  width: 100%;
+}
+
+tr, td {
+  height: 100%;
+}
+
+h2 {
+  display: inline;
+}
+
+select {
+  height: 100%;
+  display: inline;
+  text-align: center;
+}
+
+@media screen and (orientation:portrait) {
+  input[type=submit] {
+    width: 44%;
+    border: none;
+    margin: 2%;
+    padding: 13% 0 13% 0;
+    font-size: 8.5em;
+    background-color: lightgrey;
+  }
+  #goals_table {
+    min-height: 5em;
+  }
+  select {
+    width: 80%;
+  }
+}
+
+@media screen and (orientation:landscape) {
+  input[type=submit] {
+    width: 30%;
+    border: none;
+    margin: 1%;
+    padding: 5% 0 5% 0;
+    font-size: 7em;
+    background-color: lightgrey;
+  }
+  select {
+    width: 85%;
+  }
+}
+
+input[type=submit].active {
+  background-color: grey;
+}
